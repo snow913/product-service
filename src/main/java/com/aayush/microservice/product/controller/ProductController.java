@@ -1,8 +1,7 @@
 package com.aayush.microservice.product.controller;
 
-import com.aayush.microservice.product.dto.ProductRequset;
+import com.aayush.microservice.product.dto.ProductRequest;
 import com.aayush.microservice.product.dto.ProductResponse;
-import com.aayush.microservice.product.model.Product;
 import com.aayush.microservice.product.repository.ProductRepository;
 import com.aayush.microservice.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +20,7 @@ public class ProductController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ProductResponse createProduct(@RequestBody ProductRequset productRequest) {
+    public ProductResponse createProduct(@RequestBody ProductRequest productRequest) {
        return productService.createProduct(productRequest);
     }
 

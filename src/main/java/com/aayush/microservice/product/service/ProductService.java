@@ -1,6 +1,6 @@
 package com.aayush.microservice.product.service;
 
-import com.aayush.microservice.product.dto.ProductRequset;
+import com.aayush.microservice.product.dto.ProductRequest;
 import com.aayush.microservice.product.dto.ProductResponse;
 import com.aayush.microservice.product.model.Product;
 import com.aayush.microservice.product.repository.ProductRepository;
@@ -23,11 +23,11 @@ public class ProductService {
     }
  */
 
-    public ProductResponse createProduct(ProductRequset productRequset) {
+    public ProductResponse createProduct(ProductRequest productRequest) {
         Product product = Product.builder()
-                .name(productRequset.name())
-                .description(productRequset.discription())
-                .price(productRequset.price())
+                .name(productRequest.name())
+                .description(productRequest.description())
+                .price(productRequest.price())
                 .build();
         productRepository.save(product);
         log.info("Product created");
